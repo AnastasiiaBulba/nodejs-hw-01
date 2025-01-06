@@ -4,10 +4,13 @@ import { writeContacts } from '../utils/writeContacts.js';
 
 export const addOneContact = async () => {
   try {
+    // читаю існуючі контакти
     const contacts = await readContacts();
     if (!Array.isArray(contacts)) {
       throw new Error('Contacts is not an array');
     }
+
+    // створюю один новий контакт
     const newContacts = createFakeContact();
     await writeContacts([...contacts, newContacts]);
     console.log('New contact added successfully!');

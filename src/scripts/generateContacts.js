@@ -7,7 +7,7 @@ const generateContacts = async (number) => {
     // тут я читаю існуючі контакти
     const contacts = await readContacts();
 
-    // а тут я генерую нові
+    // а тут я генерую нові в масив
     const newContacts = Array.from({ length: number }, createFakeContact);
 
     // розсипаю все, тобто об'єдную і записую всі назад
